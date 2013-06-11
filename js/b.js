@@ -1,3 +1,1 @@
-var b = {};
-
-b.message = "and I like it!";
+app.message2 = "and I like it!";

@@ -1,3 +1,3 @@
-var a = {};
+var app = {};
 
-a.message = "I use Grunt...";
+app.message1 = "I use Grunt...";
