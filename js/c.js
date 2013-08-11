@@ -1,3 +1,3 @@
 (function(){
-    document.getElementById("container").innerHTML=app.message1 + ' ' + app.message2;
+    document.querySelector("#container").innerHTML=app.message1 + ' ' + app.message2;
 })();

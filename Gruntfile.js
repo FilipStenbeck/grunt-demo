@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
      grunt.initConfig({ 
-         
+        pkg: grunt.file.readJSON('package.json'), 
         jshint: {
             all: ['Gruntfile.js', 'js/*.js']
         },     
@@ -28,6 +28,9 @@ module.exports = function(grunt) {
           }
         },
          uglify: {
+          options: {
+            banner: '/*! <%= pkg.name %> <%= pkg.version %> by : <%= pkg.author %> licence : <%= pkg.license %> build date : <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+          },
           dist: {
             files: {
               'dist/js/app.js': ['dist/js/app.js' ]
