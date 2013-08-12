@@ -1,3 +1,4 @@
+//Use the render method of our module to update the DOM
 (function(){
-    document.querySelector("#container").innerHTML=app.message1 + ' ' + app.message2;
+    app.render('#container');
 })();

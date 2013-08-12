@@ -1,2 +1,3 @@
-//This is the second part of the message
-app.message2 = "and I like it!";
+//Create an object and set the message
+var app = new App();
+app.setMessage('I use Grunt...and I like it!');
