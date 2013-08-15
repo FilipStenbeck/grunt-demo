@@ -1,5 +1,5 @@
-//Declaring a module to handle our message and DOM interaction
-var App = function (){
+//Declaring a module to handle setting message and doing DOM interaction
+var MsgHandler = function (){
 	var message;
 	return {
 		getMessage : function() {
