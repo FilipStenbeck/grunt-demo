@@ -1,18 +1,20 @@
 //Declaring a module to handle setting message and doing DOM interaction
 var MsgHandler = function (){
-	var message;
+	
+  var message;
+ 
 	return {
+ 
+    //Getters & Setters
 		getMessage : function() {
 			return this.message;
 		},
 		setMessage : function(msg) {
 			this.message = msg;
 		},
-		render : function(cssSelector) {
-			//if no selector is past in, do nothing
-			if (cssSelector === undefined || cssSelector === '') {
-				return;
-			}
+		
+    //Handle the DOM
+    render : function(cssSelector) {
 			document.querySelector(cssSelector).innerHTML=this.message;
 		}
 	};
