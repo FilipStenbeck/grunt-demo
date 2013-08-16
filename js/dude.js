@@ -23,7 +23,7 @@ var Dude = function () {
         }
         quoteId = newId; 
       return quoteId;
-    }
+    };
     
     return {
         speak :  function() {
