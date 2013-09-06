@@ -15,7 +15,7 @@ var MsgHandler = function (){
 		
     //Handle the DOM
     render : function(cssSelector) {
-			document.querySelector(cssSelector).innerHTML=this.message;
+			document.querySelector(cssSelector).textContent=this.message;
 		}
 	};
 };

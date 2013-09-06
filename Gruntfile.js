@@ -53,7 +53,12 @@ module.exports = function(grunt) {
                 }        
                 ]
             }
-          }
+          },
+         karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        }
     });
     
     grunt.loadNpmTasks('grunt-usemin');
@@ -62,9 +67,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-karma');
     
     grunt.registerTask('build', ['jshint', 'clean:dist','useminPrepare','copy','concat','usemin','uglify']);
     
+      grunt.registerTask('test', ['karma']);
+    
     // Default task(s)
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('default', ['test','build']);
 };

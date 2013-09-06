@@ -16,10 +16,10 @@ var Dude = function () {
     ];
      
      //Get a new quote and make sure its a diffrent one than the last.  
-     getRandomQuote = function (min, max) {
-       var newId = quoteId; 
-       while (newId === quoteId) {
-         newId = Math.floor(Math.random() * (max - min + 1) + min);
+    getRandomQuote = function (min, max) {
+       var newId = quoteId;
+        while (newId === quoteId) {
+          newId = Math.floor(Math.random() * (max - min + 1) + min);
         }
         quoteId = newId; 
       return quoteId;
