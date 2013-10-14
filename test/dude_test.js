@@ -6,10 +6,18 @@ describe('The dude speaks ', function () {
     });
 
     it('should speak slacker wisdoms', function () {
-        expect(dude.speak().length).toBeGreaterThan(0);
+        var quote = dude.speak();
+        console.log(quote);
+        expect(quote.length).toBeGreaterThan(0);
     });
 
     it('should never genereate the same quote twize in a row', function () {   
         expect(dude.speak()).not.toEqual(dude.speak());
-    });    
+    });
+    
+    /*
+    it('will fail', function () {   
+        expect(true).toEqual(false);
+    });
+    */
 });
