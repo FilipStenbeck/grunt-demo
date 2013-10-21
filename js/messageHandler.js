@@ -1,5 +1,5 @@
 //Declaring a module to handle setting message and doing DOM interaction
-var MsgHandler = function (){
+MsgHandler = function (){
 	
   var message;
  

@@ -1,5 +1,5 @@
 //Create the Dudeness, module that generate dude quotes
-var Dude = function () {
+Dude = function () {
     var quoteId, quotes, getNextQuote, getRandomQuote;
     
     quoteId = -1;
