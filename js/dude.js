@@ -1,4 +1,7 @@
-//Create the Dudeness, module that generate dude quotes
+/* 
+ * The Dudeness, a module that generate dude quotes
+ */
+
 Dude = function () {
     var quoteId, quotes, getNextQuote, getRandomQuote;
     

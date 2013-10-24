@@ -15,9 +15,4 @@ describe('The dude speaks ', function () {
         expect(dude.speak()).not.toEqual(dude.speak());
     });
     
-    /*
-    it('will fail', function () {   
-        expect(true).toEqual(false);
-    });
-    */
 });
