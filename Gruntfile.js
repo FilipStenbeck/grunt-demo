@@ -11,8 +11,17 @@ module.exports = function(grunt) {
                     'js/hello.js': 'coffee/hello.coffee'
                 }
             }
-        }, 
-       concat: {
+        },
+        watch: {
+            coffee: {
+                files: ['coffee/*.coffee'],
+                tasks: ['compile'],
+                options: {
+                    spawn: false
+                },
+            }
+        },
+        concat: {
           dist: {
             src: ['js/messageHandler.js', 'js/dude.js', 'js/main.js', 'js/hello.js'],
             dest: 'dist/js/app.js'
@@ -66,7 +75,9 @@ module.exports = function(grunt) {
             }
         }
     });
-    
+         
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-contrib-clean');

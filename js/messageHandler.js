@@ -1,3 +1,4 @@
+
 //Declaring a module to handle setting message and doing DOM interaction
 MsgHandler = function (){
 	

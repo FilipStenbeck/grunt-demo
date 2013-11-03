@@ -1,1 +1,1 @@
-console.log "hello from coffee"
+console.log "Hello from CoffeeScript!!"
