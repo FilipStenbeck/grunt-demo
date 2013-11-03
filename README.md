@@ -16,5 +16,8 @@ Included tasks
 * grunt-contrib-htmlmin
 * grunt-usemin
 * grunt-karma
+* grunt-contrib-watch
+* grunt-notify
+* grunt-contrib-coffee
 
-The presentation on Grunt.js I held can be found <a href="http://grunt-ftw.appspot.com/index.html">here</a>
+The presentation on Grunt.js can be found <a href="http://grunt-ftw.appspot.com/index.html">here</a>
