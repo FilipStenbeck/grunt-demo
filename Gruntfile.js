@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         coffee: {
             compile: {
                 files: {
-                    'js/hello.js': 'coffee/hello.coffee'
+                    'js/messageHandler.js': 'coffee/messageHandler.coffee'
                 }
             }
         },
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 tasks: ['compile'],
                 options: {
                     spawn: false
-                },
+                }
             }
         },
         concat: {
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
     
     grunt.registerTask('compile', ['coffee']);
     
-    grunt.registerTask('test', ['karma']);
+    grunt.registerTask('test', ['compile', 'karma']);
     
     // Default task(s)
     grunt.registerTask('default', ['test','build']);

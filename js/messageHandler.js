@@ -1,22 +1,18 @@
+(function() {
+  window.MsgHandler = function() {
+    return {
+      render: function(cssSelector) {
+        document.querySelector(cssSelector).textContent = this.message;
+        return true;
+      },
+      setMessage: function(msg) {
+        this.message = msg;
+        return true;
+      },
+      getMessage: function() {
+        return this.message;
+      }
+    };
+  };
 
-//Declaring a module to handle setting message and doing DOM interaction
-MsgHandler = function (){
-	
-  var message;
- 
-	return {
- 
-    //Getters & Setters
-		getMessage : function() {
-			return this.message;
-		},
-		setMessage : function(msg) {
-			this.message = msg;
-		},
-		
-    //Handle the DOM
-    render : function(cssSelector) {
-			document.querySelector(cssSelector).textContent=this.message;
-		}
-	};
-};
+}).call(this);
