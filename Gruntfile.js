@@ -4,11 +4,17 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'), 
         jshint: {
             all: ['Gruntfile.js', 'js/*.js']
-        },     
-         
+        },
+        coffee: {
+            compile: {
+                files: {
+                    'js/hello.js': 'coffee/hello.coffee'
+                }
+            }
+        }, 
        concat: {
           dist: {
-            src: ['js/messageHandler.js', 'js/dude.js', 'js/main.js'],
+            src: ['js/messageHandler.js', 'js/dude.js', 'js/main.js', 'js/hello.js'],
             dest: 'dist/js/app.js'
           }
         },
@@ -61,6 +67,7 @@ module.exports = function(grunt) {
         }
     });
     
+    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -69,9 +76,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-karma');
     
-    grunt.registerTask('build', ['jshint', 'clean:dist','useminPrepare','copy','concat','usemin','uglify']);
+    grunt.registerTask('build', ['compile', 'jshint', 'clean:dist','useminPrepare','copy','concat','usemin','uglify']);
     
-      grunt.registerTask('test', ['karma']);
+    grunt.registerTask('compile', ['coffee']);
+    
+    grunt.registerTask('test', ['karma']);
     
     // Default task(s)
     grunt.registerTask('default', ['test','build']);
