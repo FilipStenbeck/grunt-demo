@@ -15,7 +15,14 @@ module.exports = function(grunt) {
         watch: {
             coffee: {
                 files: ['coffee/*.coffee'],
-                tasks: ['compile'],
+                tasks: ['compile', 'jshint'],
+                options: {
+                    spawn: false
+                }
+            },
+            javascript: {
+                files: ['js/*.js'],
+                tasks: ['jshint'],
                 options: {
                     spawn: false
                 }

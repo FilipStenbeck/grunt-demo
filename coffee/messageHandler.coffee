@@ -4,6 +4,6 @@ window.MsgHandler = ->
         true
     setMessage : (msg) ->
         @message = msg
-        true
+        true 
     getMessage : -> 
         @message
