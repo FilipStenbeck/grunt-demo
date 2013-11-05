@@ -3,7 +3,7 @@
  */
 
 Dude = function () {
-    var quoteId, quotes, getNextQuote, getRandomQuote;
+    var quoteId, quotes, getRandomQuote;
     
     quoteId = -1;
     quotes = [

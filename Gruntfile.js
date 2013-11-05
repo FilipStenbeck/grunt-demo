@@ -3,7 +3,10 @@ module.exports = function(grunt) {
      grunt.initConfig({ 
         pkg: grunt.file.readJSON('package.json'), 
         jshint: {
-            all: ['Gruntfile.js', 'js/*.js']
+            all: ['js/*.js'],
+            options: {
+                jshintrc: '.jshintrc'
+            }
         },
         coffee: {
             compile: {
