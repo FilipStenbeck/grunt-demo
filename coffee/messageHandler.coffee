@@ -1,9 +1,14 @@
-window.MsgHandler = -> 
+window.app = window.app or { }
+
+class window.app.MsgHandler 
+
     render : (cssSelector) ->
         document.querySelector(cssSelector).textContent=this.message;
-        true
+        this
+        
     setMessage : (msg) ->
         @message = msg
         true 
+
     getMessage : -> 
         @message

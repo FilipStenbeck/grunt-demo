@@ -1,9 +1,12 @@
 //Main script
 
 (function() {
+
+	window.app = window.app || {};
+	
     //Setup Stuff
-    var msgHandler = new MsgHandler();
-    var dude = new Dude();
+    var msgHandler = new window.app.MsgHandler();
+    var dude = new window.app.Dude();
     var the_dude_img = document.querySelector('#the_dude');
     
     //do stuff

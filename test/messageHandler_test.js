@@ -3,7 +3,7 @@ describe('Message Handler', function () {
     var msg;
     
     beforeEach(function() {
-        handler = new MsgHandler();
+        handler = new window.app.MsgHandler();
         msg = 'Test message'
     });
 

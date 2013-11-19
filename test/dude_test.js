@@ -2,7 +2,7 @@ describe('The dude speaks ', function () {
     var dude;
     
     beforeEach(function() {
-        dude = new Dude();
+        dude = new window.app.Dude();
     });
 
     it('should speak slacker wisdoms', function () {

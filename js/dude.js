@@ -2,7 +2,9 @@
  * The Dudeness, a module that generate dude quotes
  */
 
-Dude = function () {
+window.app = window.app || {};
+
+window.app.Dude = function () {
     var quoteId, quotes, getRandomQuote;
     
     quoteId = -1;
