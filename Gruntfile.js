@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
 
      grunt.initConfig({ 
-        pkg: grunt.file.readJSON('package.json'), 
+        pkg: grunt.file.readJSON('package.json'),
+
         jshint: {
             all: ['js/*.js'],
             options: {
@@ -16,9 +17,16 @@ module.exports = function(grunt) {
             }
         },
         watch: {
+            sass: {
+                files: ['css/*.scss'],
+                tasks: ['sass'],
+                options: {
+                    spawn: false
+                }
+            },
             coffee: {
                 files: ['coffee/*.coffee'],
-                tasks: ['compile'],
+                tasks: ['compile', 'jshint'],
                 options: {
                     spawn: false
                 }
@@ -29,8 +37,32 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false
                 }
+            },
+            livereload: {
+              options: {
+                  livereload: '<%= connect.options.livereload %>'
+              },
+              files: [
+                  '*.html',
+                  'css/{,*/}*.css',
+                  'js/{,*/}*.js',
+              ]
             }
         },
+        connect: {
+          options: {
+              port: 9000,
+              livereload: 35729,
+              // change this to '0.0.0.0' to access the server from outside
+              hostname: 'localhost'
+          },
+          livereload: {
+              options: {
+                  open: true,
+              }
+          }
+
+          },
         concat: {
           dist: {
             src: ['js/messageHandler.js', 'js/dude.js', 'js/main.js', 'js/hello.js'],
@@ -83,10 +115,22 @@ module.exports = function(grunt) {
             unit: {
                 configFile: 'karma.conf.js'
             }
+        },
+         sass: {
+           dist: {
+             options: {
+               style: 'expanded'
+             },
+             files: { 
+               'css/app.css': 'css/app.scss'
+             }
+           }
         }
     });
          
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-usemin');
@@ -97,12 +141,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-karma');
     
-    grunt.registerTask('build', ['compile', 'jshint', 'clean:dist','useminPrepare','copy','concat','usemin','uglify']);
-    
-    grunt.registerTask('compile', ['coffee']);
-    
+
+    grunt.registerTask('build', ['compile', 'sass', 'jshint', 'clean:dist','useminPrepare','copy','concat','usemin','uglify']);
+   
     grunt.registerTask('test', ['compile', 'karma']);
-    
+   
+    grunt.registerTask('server', ['build', 'connect:livereload', 'watch']);
+
     // Default task(s)
     grunt.registerTask('default', ['test','build']);
 };
