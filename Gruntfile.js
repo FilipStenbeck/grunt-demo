@@ -3,11 +3,6 @@ module.exports = function(grunt) {
      grunt.initConfig({ 
         pkg: grunt.file.readJSON('package.json'),
 
-         yeoman: {
-            app: './',
-            dist: 'dist'
-        },
-
         jshint: {
             all: ['js/*.js'],
             options: {
@@ -154,7 +149,6 @@ module.exports = function(grunt) {
    
     grunt.registerTask('server', ['build', 'connect:livereload', 'watch']);
 
-    
     
     // Default task(s)
     grunt.registerTask('default', ['test','build']);
