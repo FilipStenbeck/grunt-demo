@@ -8,7 +8,7 @@ class window.app.MsgHandler
         
     setMessage : (msg) ->
         @message = msg
-        true 
+        this 
 
     getMessage : -> 
         @message

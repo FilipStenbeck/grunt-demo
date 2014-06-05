@@ -11,7 +11,6 @@
     
     //do stuff
     the_dude_img.addEventListener('click', function() {
-        msgHandler.setMessage(dude.speak());
-        msgHandler.render('#container');
+        msgHandler.setMessage(dude.speak()).render('#container');
     });
 })();

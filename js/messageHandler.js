@@ -11,7 +11,7 @@
 
     MsgHandler.prototype.setMessage = function(msg) {
       this.message = msg;
-      return true;
+      return this;
     };
 
     MsgHandler.prototype.getMessage = function() {
